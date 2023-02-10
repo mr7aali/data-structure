@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void useReplace(char str[], char find[], char replace[]) {
+void useInsertion(char str[], char find[], char replace[]) {
   char temString[100];
 
     int i, j, k, find_len, replace_len, str_len;
@@ -39,7 +39,12 @@ void useReplace(char str[], char find[], char replace[]) {
 
       }
 
-  printf("\n%s |%d|",temString,strlen(temString));
+  //printf("\n%s |%d|",temString,strlen(temString));
+  n = strlen(temString);
+
+  for(i=0;i<n;i++){
+    str[i]=temString[i];
+  }
 }
 
 
@@ -60,11 +65,9 @@ int main() {
     printf("Value: ");
     gets(replace);
 
+  useInsertion(str, find, replace);
 
-
-
-  useReplace(str, find, replace);
-
+ printf("%s",str);
 
   return 0;
 }
