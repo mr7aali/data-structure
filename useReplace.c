@@ -31,21 +31,10 @@ void useReplace(char str[], char find[], char replace[]) {
 
                 }
 
-           //  if(replace_len == find_len){
-                //i=i+replace_len;
-          //   }
-           //  else{
+
                 payRep_len= replace_len;
                 payTer_len= find_len;
-            // }
-             //else if(find_len < replace_len ){
-             //   payRep_len= replace_len;
-            //    payTer_len= find_len;
-           //  }
-            // else if(replace_len < find_len){
-           //     payRep_len = replace_len;
-            //    payTer_len = find_len;
-            // }
+
 
            }
         tem ++;
@@ -71,9 +60,9 @@ void useReplace(char str[], char find[], char replace[]) {
 
 
 int main() {
-  char str[100] = "Fuck You! Fuck you so much . Fuck";
-  char find[] = "Fuck";
-  char replace[] = "Love";
+  char str[100] = "I love you";
+  char find[] = "love";
+  char replace[] = "Bangladesh ";
 
    // printf("Input a String: ");
    // gets(str);
