@@ -60,9 +60,9 @@ void useReplace(char str[], char find[], char replace[]) {
 
 
 int main() {
-  char str[100] = "I love you";
-  char find[] = "love";
-  char replace[] = "Bangladesh ";
+  char str[100] = "I love you! ";
+  char find[] = "I";
+  char replace[] = "Bangladesh";
 
    // printf("Input a String: ");
    // gets(str);

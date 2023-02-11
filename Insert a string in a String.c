@@ -52,22 +52,22 @@ void useInsertion(char str[], char find[], char replace[]) {
 
 int main() {
 
-  char str[100] = "I love Bangladesh";
-  char find[] = "love";
-  char replace[] = "have ";
+  char str[100] = "i am a developer";
+  char find[] = "developer";
+  char replace[] = "MERN Stack ";
 
 
 
-    printf("Input a String: ");
-    gets(str);
-    printf("Target a Parttern: ");
-    gets(find);
-    printf("Value: ");
-    gets(replace);
+   // printf("Input a String: ");
+   // gets(str);
+   // printf("Target a Parttern: ");
+  //  gets(find);
+   // printf("Value: ");
+   // gets(replace);
 
   useInsertion(str, find, replace);
 
- printf("%s",str);
+ printf("%s\n",str);
 
   return 0;
 }
