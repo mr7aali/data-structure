@@ -33,8 +33,8 @@ int str_len,find_len;
 }
 
 int main(){
-  char str[100] = "I dont love you, i dont hate you";
-  char find[] = "dont ";
+  char str[100] = "1212d123";
+  char find[] = "12";
 
 
   useDeletePattern(str,find);
