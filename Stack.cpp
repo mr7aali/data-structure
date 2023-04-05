@@ -9,19 +9,14 @@ char stk_store[5];
 
 
 void push(char x){
-
-
     if(stk==0){
    // printf("Overflow");
     }
     else{
     top++;
     stk--;
-
     stk_store[stk]=x;
-
     }
-
 }
 
 int main(){
