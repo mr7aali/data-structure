@@ -41,9 +41,9 @@ void deletion(Node* &head, int d_data){
            head = temp->next;
             return;
     }
-
+int i =0;
     while(temp!= NULL){
-
+     i++;
         if(temp->next->data == d_data){
             //cout<<"data ->"<< temp->data  <<endl;
            //cout<<"add ->"<<temp->next<<endl;
@@ -51,10 +51,15 @@ void deletion(Node* &head, int d_data){
             temp->next = temp->next->next;
            return ;
         }
-
+    // cout<< i<<"->"<<temp->next<<endl;
     temp = temp->next;
 
+     if(temp->next == NULL){
+       return;
     }
+
+    }
+
   //  Node* todelete = temp->next;
   //  temp->next = temp->next->next;
 
@@ -96,11 +101,9 @@ int main(){
     insertAtTail(head,4);
     insertAtTail(head,5);
     display(head);
-    deletion(head,1);
-    deletion(head,2);
+
     deletion(head,30);
-    deletion(head,4);
-    deletion(head,5);
+
 
 
     display(head);
