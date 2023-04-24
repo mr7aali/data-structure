@@ -1,1 +1,0 @@
-    // createTempArray(pattern);
