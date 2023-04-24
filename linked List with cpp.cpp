@@ -13,6 +13,12 @@ public:
 
 };
 
+void insertatHead(Node* &head,int val){
+    Node* n = new Node(val);
+    n->next = head;
+    head=n;
+}
+
 void insertAtTail(Node* &head, int val){
    Node* n = new Node(val);
    if(head == NULL){
@@ -30,16 +36,20 @@ void insertAtTail(Node* &head, int val){
 
 void deletion(Node* &head, int d_data){
     Node* temp = head;
+    if(head->data== d_data){
+
+           head = temp->next;
+            return;
+    }
 
     while(temp!= NULL){
 
         if(temp->next->data == d_data){
-
             //cout<<"data ->"<< temp->data  <<endl;
            //cout<<"add ->"<<temp->next<<endl;
            //cout<<"current add ->"<<temp->next->next<<endl;
             temp->next = temp->next->next;
-           break;
+           return ;
         }
 
     temp = temp->next;
@@ -58,14 +68,23 @@ void display(Node* head){
     while(temp != NULL){
         cout<<temp->data
 
-        //<<"("  << temp->next<<")"
+        <<"("  << temp->next<<")"
 
         <<"=>";
         temp = temp->next;
     }
     cout<<"NULL"<<endl;
 }
+bool useSearch(Node* head, int key){
+    Node* temp = head;
 
+    while(temp!= NULL){
+        if(temp->data == key){
+            return true;
+        }
+        temp = temp->next;
+    }
+}
 
 int main(){
 
@@ -77,8 +96,13 @@ int main(){
     insertAtTail(head,4);
     insertAtTail(head,5);
     display(head);
-    deletion(head,3);
+    deletion(head,1);
     deletion(head,2);
+    deletion(head,30);
+    deletion(head,4);
+    deletion(head,5);
+
+
     display(head);
 
 
