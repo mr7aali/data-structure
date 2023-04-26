@@ -36,22 +36,24 @@ void insertAtTail(Node* &head, int val){
 
 void deletion(Node* &head, int d_data){
     Node* temp = head;
-    if(head->data== d_data){
-
-           head = temp->next;
+    if(head->data== d_data){//if we delete the head element
+           Node* DeleteHead = head;
+            head = temp->next;
+           delete DeleteHead;
             return;
     }
-int i =0;
+
     while(temp!= NULL){
-     i++;
-        if(temp->next->data == d_data){
-            //cout<<"data ->"<< temp->data  <<endl;
-           //cout<<"add ->"<<temp->next<<endl;
-           //cout<<"current add ->"<<temp->next->next<<endl;
-            temp->next = temp->next->next;
-           return ;
+
+        if(temp->next->data == d_data){ //searching the key value for delete
+           //  cout<<"deleting add: "<<temp->next->next<<endl;
+                Node* toDelete = temp->next;
+              temp->next = temp->next->next;
+              delete toDelete;
+
+             return ;
         }
-    // cout<< i<<"->"<<temp->next<<endl;
+
     temp = temp->next;
 
      if(temp->next == NULL){
@@ -59,12 +61,6 @@ int i =0;
     }
 
     }
-
-  //  Node* todelete = temp->next;
-  //  temp->next = temp->next->next;
-
-
-
 }
 
 
@@ -73,13 +69,14 @@ void display(Node* head){
     while(temp != NULL){
         cout<<temp->data
 
-        <<"("  << temp->next<<")"
+      //  <<"{ "  << temp->next<<" }"
 
         <<"=>";
         temp = temp->next;
     }
     cout<<"NULL"<<endl;
 }
+
 bool useSearch(Node* head, int key){
     Node* temp = head;
 
@@ -94,19 +91,58 @@ bool useSearch(Node* head, int key){
 int main(){
 
     Node* head = NULL;
+    int choice,value;
+    bool Exit = false;
+   // insertAtTail(head,1);
+   // insertAtTail(head,2);
+   // insertAtTail(head,3);
+   // insertAtTail(head,4);
+   // insertAtTail(head,5);
+   // display(head);
 
-    insertAtTail(head,1);
-    insertAtTail(head,2);
-    insertAtTail(head,3);
-    insertAtTail(head,4);
-    insertAtTail(head,5);
-    display(head);
-
-    deletion(head,30);
+   // deletion(head,6);
 
 
 
-    display(head);
+
+
+   while(!Exit){
+    cout<<"\n\t--------{ Welcome to Linked List }----------"<<endl;
+    cout<<"\n     Press  given key....."<<endl;
+    cout<<"\n  1.POP"<<endl;
+    cout<<"\n  2.Delete"<<endl;
+    cout<<"\n  3.Display"<<endl;
+    cout<<"\n  -1.Exit"<<endl;
+    cout<<"\n Which function do you want use?: ";
+
+    cin>>choice;
+    switch(choice){
+    case 1:
+        cout<<"Enter the Value ";
+        cin>>value;
+        insertAtTail(head,value);
+        break ;
+
+    case 2:
+        cout<<"Deleting value "<<endl;
+        cin>>value;
+        deletion(head,value);
+        break;
+
+    case 3:
+        cout<<"-------------------------------------------\n\n"<<endl;
+        display(head);
+        cout<<"\n\n-------------------------------------------"<<endl;
+        break;
+    case -1:
+        Exit = true;
+        break;
+
+    }
+
+   }
+
+
 
 
 return 0;
