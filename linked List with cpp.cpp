@@ -74,7 +74,7 @@ void display(Node* head){
         <<"=>";
         temp = temp->next;
     }
-    cout<<"NULL"<<endl;
+    cout<<"NULL";
 }
 
 bool useSearch(Node* head, int key){
@@ -93,22 +93,13 @@ int main(){
     Node* head = NULL;
     int choice,value;
     bool Exit = false;
-   // insertAtTail(head,1);
-   // insertAtTail(head,2);
-   // insertAtTail(head,3);
-   // insertAtTail(head,4);
-   // insertAtTail(head,5);
-   // display(head);
-
-   // deletion(head,6);
 
 
-
-
-
-   while(!Exit){
     cout<<"\n\t--------{ Welcome to Linked List }----------"<<endl;
     cout<<"\n     Press  given key....."<<endl;
+   while(!Exit){
+
+
     cout<<"\n  1.POP"<<endl;
     cout<<"\n  2.Delete"<<endl;
     cout<<"\n  3.Display"<<endl;
@@ -118,15 +109,25 @@ int main(){
     cin>>choice;
     switch(choice){
     case 1:
-        cout<<"Enter the Value ";
+        cout<<"\nLinked List { ";
+        display(head) ;
+        cout<<" } \n\nEnter the Value : ";
         cin>>value;
         insertAtTail(head,value);
+        cout<<"\nLinked List { ";
+        display(head) ;
+        cout<<"}";
         break ;
 
     case 2:
-        cout<<"Deleting value "<<endl;
+        cout<<"\nLinked List { ";
+        display(head) ;
+        cout<<"}\n\nDeleting value : ";
         cin>>value;
         deletion(head,value);
+        cout<<"\nLinked List { ";
+        display(head) ;
+        cout<<"}";
         break;
 
     case 3:
