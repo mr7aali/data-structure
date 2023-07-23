@@ -2,14 +2,13 @@
 using namespace std;
 
 int main(){
-string s_stack="a(bc)*de";
-cout<<"Inter Expression : ";
-cin>>s_stack;
+//string s_stack="a(bc)*de";
+string s_stack="[a-m]*";
+
+
 int k=0;
 
-string text="ade";
-cout<<"Inter text : ";
-cin>>text;
+string text="below";
 
 
 string temp="";
@@ -17,7 +16,8 @@ string temp="";
 int text_len = text.size();
 int s_stack_len = s_stack.size();
 int isValid = true;
-
+int LeftRen =-1;
+int RightRen = -1;
 for(int i=0;i<text_len;i++){
 
   if('(' == s_stack[k]){
@@ -38,10 +38,39 @@ for(int i=0;i<text_len;i++){
             }
          }
        }
+        if(s_stack[k+1]=='?'){
+        int temp_len = temp.size();
+        int subCkh=0;
+         for(int j=0;j<temp_len;j++){
+
+            if((temp[j]==text[i])){
+                if(text[i]==text[i+temp_len]){
+                    subCkh++;
+                }
+
+                i++;
+            }
+
+         if(subCkh>=temp_len){
+                    isValid=false;
+                }
+         }
+        }
+
 
 
         k+=2;
 }
+   if('[' == s_stack[k]){
+     k++;
+     LeftRen =s_stack[k];
+     k+=2;
+     RightRen =s_stack[k];
+
+      k +=3;
+   }
+
+
  if(!isValid){
      break;
  }
@@ -65,6 +94,13 @@ for(int i=0;i<text_len;i++){
 
         }
          i--;
+    }
+    else if(LeftRen != -1){
+        int c_decimal = text[i];
+        if( c_decimal<LeftRen || c_decimal > RightRen ){
+            isValid=false;
+            break;
+        }
     }
 
     else{
