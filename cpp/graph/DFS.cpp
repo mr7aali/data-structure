@@ -30,8 +30,8 @@ int main() {
 
     
 
-    // cout << "Depth-First Search starting from node 0:" << endl;
-    // dfs(adjacencyMatrix, visited, 0);
+    cout << "Depth-First Search starting from node 0:" << endl;
+    dfs(adjacencyMatrix, visited, 0);
 
     return 0;
 }
