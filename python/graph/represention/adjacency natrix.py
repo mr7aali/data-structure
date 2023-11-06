@@ -10,7 +10,7 @@ for i in range(vertices):
 
 print("Initial Graph : ")
 for i in range(vertices):
-    row =""
+    row = ""
     for j in range(vertices):
        row += " " + str(adjacencyMatrix[i][j])
     print(row)
