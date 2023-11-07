@@ -1,60 +1,76 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <tuple>  
 #include <queue>
-#include <unordered_set>
 
 using namespace std;
 
-void bfs(const vector<vector<int> > &graph, int startNode, int vertex) {
-    vector<bool> visited(vertex , false);
-    queue<int> q;
-    q.push(startNode);
-    visited[startNode] = true;
+#define INF 1e9
 
-    while (!q.empty()) {
-        int current = q.front();
-        q.pop();
-        cout << current << " ";
+struct Edge {
+    int from;
+    int to;
+    int weight;
+};
 
-        for (int neighbor = 0; neighbor < vertex; ++neighbor) {
-            if (graph[current][neighbor] == 1 && !visited[neighbor]) {
-                q.push(neighbor);
-                visited[neighbor] = true;
+vector<vector<pair<int, int>>> graph;
+vector<int> distances;
+
+void dijkstra(int start) {
+    distances.assign(graph.size(), INF);
+    distances[start] = 0;
+
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        int dist, u;
+        tie(dist, u) = pq.top();
+        pq.pop();
+
+        if (distances[u] < dist) continue;
+
+        for (size_t i = 0; i < graph[u].size(); i++) {
+            int v = graph[u][i].first;
+            int w = graph[u][i].second;
+
+            int new_dist = dist + w;
+            if (new_dist < distances[v]) {
+                distances[v] = new_dist;
+                pq.push({new_dist, v});
             }
         }
     }
 }
 
 int main() {
-    int vertex, edge;
-    cin >> vertex >> edge;
+    int num_locations, num_roads;
+    cin >> num_locations >> num_roads;
 
-    vector<vector<int> > graph(vertex , vector<int>(vertex + 1, 0));
+    graph.resize(num_locations);
 
-    for (int i = 0; i < edge; ++i) {
-        int v, u;
-        cin >> v >> u;
-        graph[v][u] = 1;
-        //graph[u][v] = 1;
+    for (int i = 0; i < num_roads; i++) {
+        int from, to, weight;
+        cin >> from >> to >> weight;
+
+        graph[from].push_back({to, weight});
+        graph[to].push_back({from, weight});
     }
 
- //   for (int i = 0; i <= vertex; i++) graph[0][i] = i;
-  //  for (int i = 0; i <= vertex; i++) graph[i][0] = i;
+    int pizza_location;
+    cin >> pizza_location;
 
-    cout << "Adjacency Matrix:" << endl;
-    for (int i = 0; i < vertex; i++) {
-        for (int j = 0; j < vertex; j++) {
-            cout << graph[i][j] << " ";
-        }
-        cout << endl;
+    dijkstra(0);
+
+    int total_time = 0;
+    for (int i = 1; i < num_locations; i++) {
+        if (i == pizza_location) continue;
+
+        total_time += distances[i] * 2;
     }
 
-    int startNode;
-    cout << "Enter the starting node for BFS: ";
-    cin >> startNode;
-
-    cout << "BFS starting from node " << startNode << ": ";
-    bfs(graph, startNode, vertex);
+    cout << total_time << endl;
 
     return 0;
 }
