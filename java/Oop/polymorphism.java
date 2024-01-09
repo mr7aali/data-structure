@@ -3,23 +3,30 @@ class Student {
     String name;
     int age;
 
-    public void printInfo() {
+    public void printInfo(String name) {
+        System.out.println(this.name);
+    }
+
+    public void printInfo(int age) {
+        this.age = age;
+        System.out.println(this.age);
+    }
+
+    public void printInfo(String name, int age) {
         System.out.println(this.name);
         System.out.println(this.age);
     }
 
-    Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 }
 
 public class polymorphism {
     public static void main(String args[]) {
-      
 
-        Student s1 = new Student("Mr ali", 24);
-        s1.printInfo();
+        Student s1 = new Student();
+        s1.name = "Ali";
+        s1.age = 21;
 
+
+        s1.printInfo(205);
     }
 }
