@@ -9,9 +9,10 @@ public class Student {
     float marks;
 
     Student() {
-        this.rno = 0;
-        this.name = "Defult Name";
-        this.marks = 0;
+        // this.rno = 0;
+        // this.name = "Defult Name";
+        // this.marks = 0;
+        this(10, "Defult name", 150.40f);
     }
 
     Student(int rno, String name, float marks) {
@@ -36,8 +37,8 @@ public class Student {
 
     void getStudentInfo() {
         System.out.println(
-                "Hello! My name is <" + this.name + ">, my Roll number is <" + this.rno + "> and a I get <" + this.marks
-                        + ">");
+                "Hello! My name is [" + this.name + "], my Roll number is [" + this.rno + "] and a I get [" + this.marks
+                        + "]");
     }
 }
 
@@ -46,12 +47,15 @@ class Main {
         Student[] students = new Student[5];
 
         Student Fardin = new Student(28, "Fardin Khan", 80.5f);
-       
-
+          
         Student Ali = new Student();
         Student other = new Student(Fardin);
         Ali.getStudentInfo();
         other.getStudentInfo();
+       
         Fardin.getStudentInfo();
+  
+       
+       
     }
 }
