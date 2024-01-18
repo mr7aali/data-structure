@@ -1,17 +1,13 @@
 package Java.OPP_Intro;
 
-/**
- * Student
- */
+
 public class Student {
     int rno;
     String name;
     float marks;
 
     Student() {
-        // this.rno = 0;
-        // this.name = "Defult Name";
-        // this.marks = 0;
+    
         this(10, "Defult name", 150.40f);
     }
 
