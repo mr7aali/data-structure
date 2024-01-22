@@ -1,6 +1,7 @@
-package Java.DecimalToBinary;
-
+package Java.labTask.DecimalToBinary;
 import java.util.Scanner;
+
+
 
 public class DecimalToBinary {
     public static void main(String[] args) {
