@@ -1,4 +1,4 @@
-package Java.labTask.Test;
+package Java.javaLab.Test;
 
 public class Test {
     public static void main(String[] args) {

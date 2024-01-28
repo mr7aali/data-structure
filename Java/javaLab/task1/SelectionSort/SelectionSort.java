@@ -1,4 +1,4 @@
-package Java.labTask.SelectionSort;
+package Java.javaLab.task1.SelectionSort;
 
 public class SelectionSort {
     public static void main(String[] args) {

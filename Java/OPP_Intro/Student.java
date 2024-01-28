@@ -40,8 +40,6 @@ public class Student {
 
 class Main {
     public static void main(String[] args) {
-        Student[] students = new Student[5];
-
         Student Fardin = new Student(28, "Fardin Khan", 80.5f);
           
         Student Ali = new Student();
