@@ -2,7 +2,7 @@ package Java.javaLab.task2.ReverseTheInt;
 
 import java.util.Scanner;
 
-class Reverse {
+ class Reverse {
     int num;
 
     void getInput() {
