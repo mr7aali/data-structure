@@ -1,4 +1,4 @@
-package Java.labTask.Stack;
+package Java.javaLab.task1.Stack;
 
 
 public class Stack {
