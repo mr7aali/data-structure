@@ -1,9 +1,6 @@
 
 n, t = map(int, input().split())
-
 studentQueue = list(input())
-
-
 for t in range(t):
     i = 0
     while i < n-1:
