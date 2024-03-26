@@ -6,11 +6,11 @@ interface A {
 }
 
 interface B extends A {
-
+    void display();
 }
 
 interface C extends A {
-
+    void display();
 }
 
 class D implements B, C {
