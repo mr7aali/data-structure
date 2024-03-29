@@ -1,4 +1,4 @@
-package Java.Exam.Interface;
+package Java.MidExam.Interface;
 
 interface A {
     int a = 10;

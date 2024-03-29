@@ -1,4 +1,4 @@
-package Java.Exam.Polymorphism;
+package Java.MidExam.Polymorphism;
 
 class SuperClass {
     int num = 10;

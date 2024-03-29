@@ -1,4 +1,4 @@
-package Java.Exam.SuperKeywoardExample;
+package Java.MidExam.SuperKeywoardExample;
 
 class SuperClass {
     int num = 10;

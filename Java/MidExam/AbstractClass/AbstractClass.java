@@ -1,4 +1,4 @@
-package Java.Exam.AbstractClass;
+package Java.MidExam.AbstractClass;
 
 abstract class A {
     static int a = 10;

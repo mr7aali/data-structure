@@ -1,4 +1,4 @@
-package Java.Exam.SuperKeywoardExample2;
+package Java.MidExam.SuperKeywoardExample2;
 
 class University {
     String location, numStu;
