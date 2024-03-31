@@ -1,6 +1,8 @@
 package Java.FinalExam.assignment.assignment_1;
 
-import java.sql.Date;
+import java.util.Date;
+
+// import java.sql.Date;
 
 class Visit {
     Date date;
@@ -124,7 +126,7 @@ class Discount {
 
 public class assignment_1 {
     public static void main(String[] args) {
-        Visit visit = new Visit(new Date(1));
+        Visit visit = new Visit(new Date());
         visit.getServiceExpense(50);
         visit.getProductExpense(150);
 
